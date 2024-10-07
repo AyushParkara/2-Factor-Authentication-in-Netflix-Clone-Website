@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Containers with Nested Containers</title>
+    <link rel="stylesheet" href="2FA.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="top-container"> <img src="images/logo.png" height="50px" width="120px" /></div>
+        <div class="bottom-container">
+        
+            <!-- Left Container -->
+            <div class="left-container">
+                <h2>2-STEP VERIFICATION</h2><br><br>
+                <p>To help keep your account safe, we want to make sure it's really you trying to sign in</p>
+            </div>
+
+            <!-- Right Container with Nested Containers -->
+            <div class="right-container">
+                <h4>CHOOSE HOW YOU WANT TO SIGN IN:</h4>
+                <div class="nested-containers">
+                    <a href="emailinput.htm"><div class="nested-container"><p>GET OTP ON EMAIL ID</p></div></a>
+                    <a href="mobileinput.htm"><div class="nested-container"><p>GET OTP ON MOBILE NUMBER</p></div></a>
+                    <!-- <div class="nested-container">SECURITY CODE</div> -->
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

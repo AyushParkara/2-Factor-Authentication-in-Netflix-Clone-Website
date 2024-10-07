@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Number Input</title>
+    <link rel="stylesheet" href="MOBILEINPUT.css">
+</head>
+<body>
+    <div class="mobile-input-container">
+        <h2>Enter Your Mobile Number</h2>
+        <h3>Format: +911234567890</h3>
+        <form onsubmit="return validatePhoneNumber(event)">
+            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter mobile number" pattern="\+?[0-9]{10,13}" required>
+            <span id="error-message"></span>
+            <button type="submit">Send OTP</button>
+        </form>
+    </div>
+    <script>
+        function requestOtpSms(phoneNumber) {
+            // Store the phone number in a cookie
+            document.cookie = `phoneNumber=${phoneNumber}; path=/`;
+
+            fetch('http://localhost:3002/request-sms-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ phoneNumber })
+            })
+            .then(response => {
+                console.log('Response Status:', response.status);
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Response Data:', data);
+                alert(data);
+                window.location.href = 'otpsms.htm'; // Ensure this file exists
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+                alert('Failed to request OTP.');
+            });
+        }
+
+        function validatePhoneNumber(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const phoneNumber = document.getElementById('mobile-number').value;
+            const errorMessage = document.getElementById('error-message');
+
+            const phonePattern = /^\+?[0-9]{10,13}$/;
+            if (phonePattern.test(phoneNumber)) {
+                requestOtpSms(phoneNumber);
+            } else {
+                errorMessage.textContent = 'Invalid phone number format. Please follow the format +911234567890.';
+            }
+        }
+    </script>
+</body>
+</html>
+

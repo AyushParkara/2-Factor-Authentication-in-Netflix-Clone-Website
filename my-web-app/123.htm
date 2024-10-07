@@ -1,0 +1,44 @@
+html code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Step Verification</title>
+    <link rel="stylesheet" href="123.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2-Step Verification</h1>
+        <p>To help keep your account safe, we want to make sure it's really you trying to sign in</p>
+        <div class="email-container">
+            <img src="user-icon.png" alt="User Icon" class="user-icon">
+            <select id="email-select">
+                <option value="user@example.com">user@example.com</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="options">
+            <label>
+                <input type="radio" name="verification-method" value="email">
+                <span>Get OTP via Email</span>
+            </label>
+            <label>
+                <input type="radio" name="verification-method" value="sms">
+                <span>Get OTP via SMS</span>
+            </label>
+            <label>
+                <input type="radio" name="verification-method" value="voice">
+                <span>Get OTP via Voice Call</span>
+            </label>
+        </div>
+
+        <div class="otp-input">
+            <input type="text" id="otp" placeholder="Enter OTP">
+        </div>
+
+        <button id="verify-button">Verify</button>
+    </div>
+</body>
+</html>

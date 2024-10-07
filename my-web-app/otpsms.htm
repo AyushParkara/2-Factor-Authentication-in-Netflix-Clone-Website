@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Input</title>
+    <link rel="stylesheet" href="OTPEMAIL.css">
+</head>
+<body>
+    <div class="otp-container">
+        <h1>OTP VERIFICATION</h1>
+        <div class="text">
+            <h4>ONE TIME PASSWORD (OTP) has been sent via SMS to your registered mobile number.</h4>
+        </div> 
+        <h2>Enter the OTP to verify it.</h2>
+       <div class="otp-input">
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp1" oninput="moveToNext(this, 'otp2')" required>
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp2" oninput="moveToNext(this, 'otp3')" required>
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp3" oninput="moveToNext(this, 'otp4')" required>
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp4" oninput="moveToNext(this, 'otp5')" required>
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp5" oninput="moveToNext(this, 'otp6')" required>
+            <input type="number" min="0" max="9" maxlength="1" class="otp-field" id="otp6" oninput="submitOtp()">   
+        </div>
+        <button onclick="submitOtp()">Verify OTP</button>
+    </div>
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function moveToNext(current, nextId) {
+            if (current.value.length >= current.maxLength) {
+                document.getElementById(nextId).focus();
+            }
+        }
+
+        function submitOtp() {
+            const otp = Array.from(document.querySelectorAll('.otp-field')).map(input => input.value).join('');
+            const phoneNumber = getCookie('phoneNumber'); // Retrieve the phone number from the cookie
+
+            if (!phoneNumber) {
+                alert('Phone number not found. Please request OTP again.');
+                return;
+            }
+
+            fetch('http://localhost:3002/verify-sms-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ otp, phoneNumber })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes('SMS OTP is valid! Authentication successful.')) {
+                    window.location.href = 'site.html'; // Redirect to site.html if OTP is successful
+                } else {
+                    alert(data); // Show error message
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to verify OTP.');
+            });
+        }
+    </script>
+</body>
+</html>
+

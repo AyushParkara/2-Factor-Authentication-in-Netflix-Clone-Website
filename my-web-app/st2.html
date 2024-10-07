@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Stranger Things
+    </title>
+    <link rel="stylesheet" href="st2.css">
+    <link rel="shortcut icon" type="x-icon" href="IMAGE/netflix.png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="icons">
+                <li>
+                    <div class="navbar_got">
+                        <img src="IMAGE/netflixlogo.png" alt="netflix" class="logo">
+                    </div>
+                </li>
+                <li><a href="site.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+<main>
+    <div class="c1">
+        <img src="poster/Stranger Things (2016) - Season 2.png" alt="got" class="got">
+    </div>
+    <div class="c2">
+        NETFLIX
+    </div>
+    <div class="c3">
+        ORIGINAL
+    </div>
+    <div class="c4">
+        Stranger Things
+    </div>
+    <div class="c5">
+        2017
+    </div>
+    <div class="c6">
+        |
+    </div>
+    <div class="c7">
+        4 Seasons
+    </div>
+    <div class="c8">
+        |
+    </div>
+    <div class="c9">
+        16+
+    </div>
+    <div class="tabs-container">
+        <ul class="tabs">
+            <li id="overview-tab" class="active">Overview</li>
+            <li id="episodes-tab">Episodes</li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="overview-content" class="tab-content active">
+            <ul class="p1">
+                <li>One year after Will's return, strange occurrences begin again in Hawkins. Will experiences troubling
+                    visions of the Upside Down and the looming threat of a monstrous entity called the Mind Flayer.
+                    Eleven, who has been hiding with Chief Jim Hopper, learns more about her past and discovers a
+                    "sister" named Kali with similar abilities. As the Mind Flayer's influence grows, the kids and their
+                    allies must unite to close the gate to the Upside Down and save Hawkins from destruction.</li>
+            </ul>
+            <ul class="p2">
+                <li class="t1">Starring</li>
+                <li>Millie Bobby Brown,Finn Wolfhard,Noah Schnapp,Sadie Sink</li>
+            </ul>
+            <ul class="p3">
+                <li class="t2">Created By</li>
+                <li>Matt Duffer, Ross Duffer</li>
+            </ul>
+            <ul class="p4">
+                <li class="t3">Genre</li>
+                <li>Horror, Romance, Adventure, Thriller</li>
+            </ul>
+        </div>
+        <div id="episodes-content" class="tab-content">
+            <ul class="episode-list">
+                <li><a href="MOVIES/S -2/CH-1.mp4" class="episode-btn">Episode 1</a></li>
+                <li><a href="MOVIES/S -2/CH-2.mp4" class="episode-btn">Episode 2</a></li>
+                <li><a href="MOVIES/S -2/CH-3.mp4" class="episode-btn">Episode 3</a></li>
+                <li><a href="MOVIES/S -2/CH-4.mp4" class="episode-btn">Episode 4</a></li>
+                <li><a href="MOVIES/S -2/CH-4.mp4" class="episode-btn">Episode 5</a></li>
+                <li><a href="MOVIES/S -2/CH-5.mp4" class="episode-btn">Episode 6</a></li>
+                <li><a href="MOVIES/S -2/CH-6.mp4" class="episode-btn">Episode 7</a></li>
+                <li><a href="MOVIES/S -2/CH-7.mp4" class="episode-btn">Episode 8</a></li>
+                <li><a href="MOVIES/S -2/CH-8.mp4" class="episode-btn">Episode 9</a></li>
+                <!-- <li><a href="" class="episode-btn">Episode 10</a></li> -->
+            </ul>
+        </div>
+</main>
+<script>
+    document.getElementById("overview-tab").addEventListener("click", function () {
+        showTabContent("overview");
+    });
+
+    document.getElementById("episodes-tab").addEventListener("click", function () {
+        showTabContent("episodes");
+    });
+
+    function showTabContent(tab) {
+        // Remove active class from all tabs and content
+        document.querySelectorAll(".tabs li").forEach(tab => tab.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
+
+        // Add active class to the selected tab and corresponding content
+        document.getElementById(tab + "-tab").classList.add("active");
+        document.getElementById(tab + "-content").classList.add("active");
+    }
+
+</script>
+
+</html>

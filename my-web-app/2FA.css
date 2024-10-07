@@ -1,0 +1,88 @@
+/* Basic reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.top-container{
+    padding-left: 30px;
+    background-color: white;
+    display: block;
+    height: 50px;
+    width: 100%;
+}
+
+/* Main container wrapping both containers */
+.bottom-container {
+    display: flex;
+    border-radius: 10px;
+}
+
+/* Styling for the left and right containers */
+.left-container{
+    background-color: white;
+    padding: 30px;
+    width: 350px;
+    height: 270px;
+    display: flex;
+    padding-bottom:120px;
+    flex-direction: column;
+}
+
+.right-container {
+    background-color: white;
+    padding: 30px;
+    width: 350px;
+    height: 270px;
+    display: flex;
+    padding-bottom:120px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-container p{
+    font-size: medium;
+}
+
+/* Nested containers within the right container */
+.nested-containers {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    /* text-decoration: none; */
+}
+
+.nested-container {
+    background-color:#007bff;
+    border-bottom: black;
+    color: yellow;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    list-style-type: none;
+    /* text-decoration: none; */
+}
+
+.nested-container p,a{
+    text-decoration: none;
+    color: yellow;
+}
+

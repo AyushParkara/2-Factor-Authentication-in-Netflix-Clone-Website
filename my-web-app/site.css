@@ -1,0 +1,615 @@
+/* header {
+    background-color: red;
+} */
+
+a:visited {
+    color: white;
+}
+
+.navbar {
+    position: fixed;
+    top: -30px;
+    width: 99%;
+    display: flex;
+    /* FLEX ALLOOWS US TO PUT MULTIPLE ELEMENTS IN SAME LINE */
+    justify-content: space-between;
+    padding: 1% 1%;
+    /*2% FROM TOP AND 1% FROM RIGHT  */
+    z-index: 10;
+    font-family: "Poppins", sans-serif;
+    padding: auto;
+    /* background-color: aqua; */
+    height: 15%;
+
+}
+
+.logo {
+    height: 100%;
+    width: 125px;
+}
+.logo:hover {
+    transform: scale(1.1);
+    /* Optional: slightly zoom the image on hover */
+}
+
+.icons {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    /* background-color: black; */
+    /* background: linear-gradient(to right, #2E3192, #1BFFFF); */
+    color: white;
+    gap: 25px;
+    list-style-type: none;
+    /* position: fixed; */
+
+}
+
+.icons2 {
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+    color: white;
+    gap: 25px;
+    list-style-type: none;
+    margin-left: auto;
+    /* top: 25; */
+    /* left: 40; */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+
+main {
+    height: 270dvh;
+    width: auto;
+    background: rgba(0, 0, 0, 0.860);
+}
+
+.hero_bg_img_cont {
+    width: 100%;
+    height: 100%;
+
+}
+
+.hero_bg_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero_bg_overlay {
+    position: absolute;
+    inset: 0;
+    /* INSET:-IT DEFINES DISTANCE BETWEEN ELEMENT AND PARENT ELEMNT. HERE IT IS USED FOR PUTTING BLACK SCREEN ON BACKGROND */
+    top: 8px;
+    left: 10px;
+    /* width: 1500px; */
+    width: 99%;
+    height: 115.7%;
+    background: rgba(0, 0, 0, 0.6);
+
+}
+
+.search-icon {
+    margin-left: auto;
+}
+
+.search {
+    height: 50px;
+    /* Adjust size of icons to fit navbar */
+    width: auto;
+}
+
+.noti {
+    height: 50px;
+    /* Adjust size of icons to fit navbar */
+    width: auto;
+}
+
+.acc {
+    height: 50px;
+    /* Adjust size of icons to fit navbar */
+    width: auto;
+}
+
+/* Dropdown menu styles */
+/* Base styles for the dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1001;
+    width: 125px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Soft shadow for depth */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Links inside the dropdown menu */
+.dropdown-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a.dropdown-toggle {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+    /* Significantly increase the radius */
+    padding: 5px 10px;
+    /* background-color: #444; */
+    /* Optional: Background color */
+    /* color: white; */
+    /* Optional: Text color */
+
+    /* Ensure the toggle behaves like a button */
+}
+
+.dropdown-toggle img {
+    border-radius: 50%;
+    /* Round the image inside the toggle */
+}
+
+/* Hover effect for the links */
+.dropdown-menu a:hover {
+    background: #555;
+    color: #ff9900;
+    /* Highlight color on hover */
+}
+
+/* Hover effect for the dropdown toggle (the account icon) */
+.dropdown-toggle:hover+.dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* Smooth drop-down effect */
+}
+
+/* Adding a small arrow indicator for the dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        min-width: 150px;
+        right: 5px;
+    }
+}
+
+.c1 {
+    position: absolute;
+    top: 230px;
+    /* right: -390px; */
+    left: 1110px;
+}
+
+.title {
+    height: 150px;
+    width: min-content;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.c2 {
+    position: absolute;
+    top: 410px;
+    left: 1080px;
+}
+
+.d2 {
+    font-size: 24px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.c3 {
+    position: absolute;
+    top: 548px;
+    left: 1100px;
+}
+
+.play {
+    height: 44px;
+    width: min-content;
+}
+
+.play:hover {
+    transform: scale(1.1);
+    /* Optional: slightly zoom the image on hover */
+}
+
+
+.c4 {
+    position: absolute;
+    top: 545px;
+    left: 1250px;
+}
+
+.moreinfo{
+    height: 50px;
+}
+.moreinfo:hover {
+    transform: scale(1.1);
+    /* Optional: slightly zoom the image on hover */
+}
+
+
+.c5 {
+    position: absolute;
+    left: 100px;
+    top: 750px;
+}
+
+.d5 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    font-family: monospace;
+    transition: text-shadow 0s ease;
+}
+
+/* .d5:hover {
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+} */
+
+
+.gw {
+    position: absolute;
+    top: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10% auto;
+    width: 92%;
+}
+
+.g1 {
+    width: 1400px;
+    overflow-x: scroll;
+    position: relative;
+    left: 100px;
+    display: flex;
+}
+
+.g1 div {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.g1 div img {
+    width: 200px;
+    height: 300px;
+    transition: transform 0.4s;
+}
+
+.g1::-webkit-scrollbar {
+    display: none;
+}
+
+
+#backBtn, #nextBtn {
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#nextBtn {
+    right: -110px;
+}
+
+#backBtn {
+    left: 85px;
+}
+
+.g1 div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.poster-container {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.poster-container span {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.poster-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.poster-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    display: none;
+    z-index: 1;
+}
+
+/* Hover effect for image and video */
+.poster-container span:hover img {
+    transform: scale(1.1);
+}
+
+.poster-container span:hover video {
+    display: block;
+    transform: scale(1.1);
+}
+
+.c6 {
+    position: absolute;
+    left: 100px;
+    top: 1150px;
+}
+
+.d6 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+.gw2 {
+    position: absolute;
+    top: 1050px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10% auto;
+    width: auto;
+}
+.g2 {
+    width: 1400px;
+    overflow-x: scroll;
+    position: relative;
+    left: 100px;
+    display: flex;
+}
+
+.g2 div {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.g2 div img {
+    width: 200px;
+    height: 300px;
+    transition: transform 0.4s;
+}
+
+.g2::-webkit-scrollbar {
+    display: none;
+}
+
+
+#backBtn2, #nextBtn2 {
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#nextBtn2 {
+    right: -110px;
+}
+
+#backBtn2 {
+    left: 85px;
+}
+
+.g2 div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.poster-container2 {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.poster-container2 span {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.poster-container2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.poster-container2 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    display: none;
+    z-index: 1;
+}
+
+/* Hover effect for image and video */
+.poster-container2 span:hover img {
+    transform: scale(1.1);
+}
+
+.poster-container2 span:hover video {
+    display: block;
+    transform: scale(1.1);
+}
+
+.c7 {
+    position: absolute;
+    left: 100px;
+    top: 1550px;
+}
+
+.d7 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+.gw3 {
+    position: absolute;
+    top: 1450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10% auto;
+    width: 92%;
+}
+
+.g3 {
+    width: 1400px;
+    overflow-x: scroll;
+    position: relative;
+    left: 100px;
+    display: flex;
+}
+
+.g3 div {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.g3 div img {
+    width: 200px;
+    height: 300px;
+    transition: transform 0.4s;
+}
+
+.g3::-webkit-scrollbar {
+    display: none;
+}
+
+
+#backBtn3, #nextBtn3 {
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#nextBtn3 {
+    right: -110px;
+}
+
+#backBtn3 {
+    left: 85px;
+}
+
+.g3 div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.poster-container3 {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.poster-container3 span {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.poster-container3 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.poster-container3 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    display: none;
+    z-index: 1;
+}
+
+/* Hover effect for image and video */
+.poster-container3 span:hover img {
+    transform: scale(1.1);
+}
+
+.poster-container3 span:hover video {
+    display: block;
+    transform: scale(1.1);
+}
